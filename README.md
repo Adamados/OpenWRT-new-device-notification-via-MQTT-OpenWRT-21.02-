@@ -2,6 +2,7 @@ Credits to https://gist.github.com/jwalanta/53f55d03fcf5265938b64ffd361502d5 i j
 
 # Install at OpenWRT the following packages
 mosquitto-client-ssl
+
 libmosquitto-ssl
 
 # Add the following line in /etc/dnsmasq.conf
@@ -11,10 +12,7 @@ dhcp-script=/etc/detect_new_device.sh
 ```
 #!/bin/sh
 
-# script to detect new dhcp lease
-
-# this will be called by dnsmasq everytime a new device is connected
-# with the following arguments
+# this will be called by dnsmasq everytime a new device is connected with the following arguments
 # $1 = add | old
 # $2 = mac address
 # $3 = ip address
