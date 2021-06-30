@@ -9,3 +9,4 @@ libmosquitto-ssl
 dhcp-script=/etc/detect_new_device.sh
 
 # Add at /root/detect_new_device.sh the script
+And give Execute permissions
