@@ -15,11 +15,21 @@ mqtt_topic=
 user=
 pass=
 
-if [ "$1" == "add" ]; then
+known_mac_addr="/etc/config/dhcp"
 
-  msg="New device $*"
-  
+#Convert MAC to uppercase                   
+mac=$(echo "$2" | awk '{print toupper($0)}')                                                                                                     
+
+# check if the mac is in known devices list
+grep -q "$mac" "$known_mac_addr"                                                                                                                 
+unknown_mac_addr=$?                                        
+
+if [ "$1" == "add" ] && [ "$unknown_mac_addr" -ne 0 ]; then
+
+  msg="Unknown device connected: $mac $3 $4"                                                                                                                                          
+
+  echo `date` "LAN" $msg >> /tmp/dhcpmasq.log
 # https://mosquitto.org/man/mosquitto_pub-1.html
   mosquitto_pub -h $mqtt_host -p $mqtt_port -u $user -P $pass -t $mqtt_topic -m "$msg"
 
-fi
+fi  
