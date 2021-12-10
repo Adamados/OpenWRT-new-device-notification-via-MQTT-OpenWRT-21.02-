@@ -1,4 +1,4 @@
-Credits to https://gist.github.com/jwalanta/53f55d03fcf5265938b64ffd361502d5 & https://gist.github.com/jwalanta/53f55d03fcf5265938b64ffd361502d5 i just edit it to my needs
+Credits to https://gist.github.com/jwalanta/53f55d03fcf5265938b64ffd361502d5 i just edit it to my needs
 
 # Install at OpenWRT the following packages
 mosquitto-client-ssl
