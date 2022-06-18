@@ -8,5 +8,5 @@ libmosquitto-ssl
 # Add the following line in /etc/dnsmasq.conf
 dhcp-script=/root/detect_new_device.sh
 
-# Add at /root/detect_new_device.sh the script
+# Add at /root/ the script
 And give Execute permissions
